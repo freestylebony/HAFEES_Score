@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">HAFEES_Score</string>
+    <string name="team_1">NIGERIA</string>
+    <string name="team_2">FRANCE</string>
+    <string name="button">RESET SCORE</string>
+    <string name="score_1">2</string>
+    <string name="score_2">3</string>
+    <string name="toggle_score1">+/-</string>
+    <string name="toggle_score2">+/-</string>
+
+</resources>

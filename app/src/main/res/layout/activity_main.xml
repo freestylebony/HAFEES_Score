@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<!--reset button-->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="197dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="412dp"
+        android:text="@string/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--team 1 text view-->
+
+    <TextView
+        android:id="@+id/team1textView"
+        android:layout_width="93dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="100dp"
+        android:text="@string/team_1"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/team2textView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--team 2 text view-->
+
+    <TextView
+        android:id="@+id/team2textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="68dp"
+        android:text="@string/team_2"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--team 1 score textview-->
+    <TextView
+        android:id="@+id/score1textView"
+        android:layout_width="24dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="72dp"
+        android:text="@string/score_1"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/score2textView"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team1textView" />
+
+    <!--team 2 score textview-->
+
+    <TextView
+        android:id="@+id/score2textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="108dp"
+        android:text="@string/score_2"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team2textView" />
+
+    <!-- score 1 toggle button-->
+
+    <Button
+        android:id="@+id/togglebutton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginBottom="42dp"
+        android:text="@string/toggle_score1"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score1textView" />
+
+    <!--score 2 toggle button-->
+
+    <Button
+        android:id="@+id/togglebutton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="43dp"
+        android:text="@string/toggle_score2"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/score2textView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
