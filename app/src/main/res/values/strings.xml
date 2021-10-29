@@ -3,9 +3,14 @@
     <string name="team_1">NIGERIA</string>
     <string name="team_2">FRANCE</string>
     <string name="button">RESET SCORE</string>
-    <string name="score_1">2</string>
-    <string name="score_2">3</string>
-    <string name="toggle_score1">+/-</string>
-    <string name="toggle_score2">+/-</string>
+    <string name="score_1">0</string>
+    <string name="score_2">0</string>
+    <string name="increase_score1">+</string>
+    <string name="decrease_score1">-</string>
+    <string name="increase_score2">+</string>
+    <string name="decrease_score2">-</string>
+    <string name="points_2">2 Points</string>
+    <string name="points_3">3 Points</string>
+    <string name="points_5">5 Points</string>
 
 </resources>
