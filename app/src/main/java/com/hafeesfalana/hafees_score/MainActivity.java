@@ -9,9 +9,11 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener,
+public class MainActivity extends AppCompatActivity implements
         View.OnClickListener{
-
+       //declare some variables
+       int score1Value = 0;
+       int score2Value = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,97 +24,73 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         Button score2IncreaseBtn = findViewById(R.id.score2Increase);
         Button score2DecreaseBtn = findViewById(R.id.score2Decrease);
 
-
         //listener
         RadioGroup pointsValue = findViewById(R.id.pointsValueGroup);
-        pointsValue.setOnCheckedChangeListener(this);
         score1DecreaseBtn.setOnClickListener(this);
         score1IncreaseBtn.setOnClickListener(this);
         score2DecreaseBtn.setOnClickListener(this);
         score2IncreaseBtn.setOnClickListener(this);
     }
 
-     //onCheckedChanged method for radio buttons
+
+
+     //onClick method
     @Override
-    public void onCheckedChanged(RadioGroup radioGroup, int checkedButtonId) {
+    public void onClick(View view) {
         //initialize an integer called pointValue to store the point values
         int pointValue;
-
-           //find the score text views by their IDs
-         TextView score1 = findViewById(R.id.score1textView);
-         TextView score2 = findViewById(R.id.score2textView);
-
-         //use switch statement to get the Id of the checked radio button to determine the point value
-        switch (checkedButtonId){
+        //find the Id of the radio button group
+        RadioGroup pointsValue = findViewById(R.id.pointsValueGroup);
+        //use switch statement to get each point values from radio button
+        switch (pointsValue.getCheckedRadioButtonId()){
             case R.id.point_3:
-                Toast.makeText( MainActivity.this, "3 points selected", Toast.LENGTH_SHORT).show();
-                 pointValue = 3;
-                 score1.setText(String.valueOf(pointValue));
-                 score2.setText(String.valueOf(pointValue));
+                pointValue = 3;
                 break;
             case R.id.point_5:
-                Toast.makeText(MainActivity.this, "5 points selected", Toast.LENGTH_SHORT).show();
                 pointValue = 5;
-                score1.setText(String.valueOf(pointValue));
-                score2.setText(String.valueOf(pointValue));
                 break;
             case R.id.point_2:
             default:
-                Toast.makeText(MainActivity.this, "2 points selected", Toast.LENGTH_SHORT).show();
                 pointValue = 2;
-                score1.setText(String.valueOf(pointValue));
-                score2.setText(String.valueOf(pointValue));
         }
-    }
 
-     //onClick method for buttons
-    @Override
-    public void onClick(View view) {
         //get the IDs of the four buttons
         findViewById(R.id.score1Increase);
-        findViewById(R.id.score1Decrease);
         findViewById(R.id.score2Increase);
-        findViewById(R.id.score2Decrease);
          //get the two score text views
         TextView score1 = findViewById(R.id.score1textView);
         TextView score2 = findViewById(R.id.score2textView);
         // use switch statements to get any of the buttons when clicked
         switch(view.getId()) {
             case R.id.score1Decrease:
-                //get the value from score 1 textview
-                  String valueString = score1.getText().toString();
-                  //convert the value to an integer and decrease it by 1
-                   Integer scoreValue = Integer.parseInt(valueString);
-                   scoreValue -= 1;
+                  //decrease the value of score 1 by the radio button point selected
+                  score1Value -= pointValue;
+                  if(score1Value <= 0){
+                      score1Value = 0;
+                  }
                    //display the new score value to the score 1 textview
-                    score1.setText(scoreValue.toString());
+                    score1.setText(Integer.toString(score1Value));
                 break;
             case R.id.score1Increase:
-                //get the value from score 1 textview
-                valueString = score1.getText().toString();
-                //convert the value to an integer and increase it by 1
-                 scoreValue = Integer.parseInt(valueString);
-                scoreValue += 1;
+                // increase the value of score 1 by the radio button point selected
+                 score1Value += pointValue;
                 //display the new score value to the score 1 textview
-                score1.setText(scoreValue.toString());
+                score1.setText(Integer.toString(score1Value));
                 break;
             case R.id.score2Decrease:
-                //get the value from score 2 textview
-                valueString = score2.getText().toString();
-                //convert the value to an integer and decrease it by 1
-                scoreValue = Integer.parseInt(valueString);
-                scoreValue -= 1;
-                //display the new score value to the score 1 textview
-                score2.setText(scoreValue.toString());
+                //decrease the value of score 2 by the radio button point selected
+                score2Value -= pointValue;
+                if(score2Value <= 0) {
+                    score2Value = 0;
+                }
+                //display the new score value to the score 2 textview
+                score2.setText(Integer.toString(score2Value));
                 break;
             case R.id.score2Increase:
-                //get the value from score 2 textview
-                valueString = score2.getText().toString();
-                //convert the value to an integer and increase it by 1
-                scoreValue = Integer.parseInt(valueString);
-                scoreValue += 1;
-                //display the new score value to the score 1 textview
-                score2.setText(scoreValue.toString());
+                //increase the value of score 2 by the radio button point selected
+                score2Value += pointValue;
+                //display the new score value to the score 2 textview
+                score2.setText(Integer.toString(score2Value));
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + view.getId());
