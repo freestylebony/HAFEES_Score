@@ -13,15 +13,13 @@
 
     <TextView
         android:id="@+id/team1textView"
+        style="@style/team1Style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:layout_marginTop="108dp"
         android:layout_marginEnd="112dp"
         android:text="@string/team_1"
-        android:textColor="#6FAF4C"
-        android:textSize="35sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/team2textView"
         app:layout_constraintHorizontal_bias="0.312"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,27 +27,25 @@
 
     <TextView
         android:id="@+id/team2textView"
+        style="@style/team2Style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="108dp"
         android:layout_marginEnd="50dp"
         android:text="@string/team_2"
-        android:textColor="#1139C6"
-        android:textSize="35sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--score 1 text view-->
 
     <TextView
+        style="@style/scoreTextStyle"
         android:id="@+id/score1textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginTop="288dp"
         android:text="@string/score_1"
-        android:textSize="30sp"
         app:layout_constraintEnd_toStartOf="@+id/score2textView"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,6 +54,7 @@
     <!-- score 2 text view-->
 
     <TextView
+        style="@style/scoreTextStyle"
         android:id="@+id/score2textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -71,11 +68,11 @@
     <!--score1 decrease button-->
     <Button
         android:id="@+id/score1Decrease"
+        style="@style/myButton"
         android:layout_width="50sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="16dp"
-        android:backgroundTint="@android:color/holo_blue_dark"
         android:text="@string/decrease_score1"
         app:layout_constraintBottom_toBottomOf="@+id/score1Increase"
         app:layout_constraintEnd_toStartOf="@+id/score1Increase"
@@ -84,10 +81,10 @@
     <!--score 2 decrease button-->
     <Button
         android:id="@+id/score2Decrease"
+        style="@style/myButton"
         android:layout_width="50sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:backgroundTint="@android:color/holo_blue_dark"
         android:text="@string/decrease_score2"
         app:layout_constraintBottom_toBottomOf="@+id/score2Increase"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,11 +95,11 @@
 
     <Button
         android:id="@+id/score1Increase"
+        style="@style/myButton"
         android:layout_width="50sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="92dp"
         android:layout_marginTop="24dp"
-        android:backgroundTint="@android:color/holo_blue_dark"
         android:text="@string/increase_score1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/team1textView" />
@@ -111,11 +108,11 @@
     <!--score 2 increase button-->
     <Button
         android:id="@+id/score2Increase"
+        style="@style/myButton"
         android:layout_width="50sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="80dp"
-        android:backgroundTint="@android:color/holo_blue_dark"
         android:text="@string/increase_score2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/team2textView" />
@@ -136,23 +133,23 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
+            style="@style/radioButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
             android:id="@+id/point_2"
             android:text="@string/points_2" />
 
         <RadioButton
+            style="@style/radioButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
             android:id="@+id/point_3"
             android:text="@string/points_3" />
 
         <RadioButton
+            style="@style/radioButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
             android:id="@+id/point_5"
             android:text="@string/points_5" />
 
