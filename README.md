@@ -1,2 +1,2 @@
 # HAFEES_Score
-A simple layout for a scorekeeper app
+A simple functional scorekeeper application.
