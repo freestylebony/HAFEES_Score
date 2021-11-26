@@ -3,6 +3,7 @@ package com.hafeesfalana.hafees_score;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
@@ -31,10 +32,15 @@ public class MainActivity extends AppCompatActivity implements
         score2DecreaseBtn.setOnClickListener(this);
         score2IncreaseBtn.setOnClickListener(this);
     }
+     //Menu
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.options_menu, menu);
+        return true;
+    }
 
 
 
-     //onClick method
+    //onClick method
     @Override
     public void onClick(View view) {
         //initialize an integer called pointValue to store the point values
